@@ -3,9 +3,11 @@ const container = document.getElementById("content");
 const tasks = [
   {"Name": "Atividade na mente", "Status": "Completa", "description": "Esperando pela aprovação do Bruno ainda!", "complete": true},
   //
-  {"Name": "Aprovação do Bruno", "Status": "Em Andamento", "description": "Esperando pela aprovação do Bruno ainda!", "complete": false},
+  {"Name": "Aprovação do Bruno", "Status": "Completa", "description": "Aprovado por Bruno!", "complete": true},
   //
-  {"Name": "Aprovação do pais do Bruno", "Status": "-", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false},
+  {"Name": "Aprovação do pais do Bruno", "Status": "Em Andamento", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false},
+  //
+  {"Name": "Aprovação do pais do Bruno", "Status": "Em Andamento", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false},
   //
   {"Name": "Dia confirmado", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false}
 ];
