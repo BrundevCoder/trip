@@ -5,9 +5,9 @@ const tasks = [
   //
   {"Name": "Aprovação do Bruno", "Status": "Completa", "description": "Aprovado por Bruno!", "complete": true},
   //
-  {"Name": "Aprovação do pais do Bruno", "Status": "Em Andamento", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false},
+  {"Name": "Esperando data para perguntar", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
   //
-  {"Name": "Aprovação do pais do Bruno", "Status": "Em Andamento", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false},
+  {"Name": "Aprovação do pais do Bruno", "Status": "-", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false},
   //
   {"Name": "Dia confirmado", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false}
 ];
