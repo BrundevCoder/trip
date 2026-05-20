@@ -39,6 +39,7 @@ h1 {
 }
 
 .block {
+  background: #ffffff2c;
   padding-top: 1rem;
   padding-bottom: 1rem;
   padding-left: .5rem;
@@ -111,4 +112,8 @@ h1 {
 .description {
   font-family: "Outfit";
   color: var(--decp-color);
+}
+
+.occ {
+  background: #ffffff67;
 }

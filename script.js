@@ -64,6 +64,10 @@ function showTasks(name, status, decp, complete) {
     span.classList.add("span-in-progress");
   }
 
+  if (status === "-") {
+    section.classList.add("occ");
+  }
+
   // show it
   container.appendChild(section);
 }
