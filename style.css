@@ -39,6 +39,7 @@ h1 {
 }
 
 .block {
+  border: 5px solid var(--stats-bg);
   background: #ffffff2c;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -49,6 +50,7 @@ h1 {
 
 .block.complete {
   background: #ffffff83;
+  border: 5px solid var(--complete);
   filter: grayscale(.5);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
 }
