@@ -27,6 +27,7 @@ body {
 
 #content {
   width: 100%;
+  max-width: 525px;
   padding: .5rem;
   display: flex;
   flex-direction: column;
