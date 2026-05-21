@@ -8,13 +8,17 @@ const tasks = [
   //
   {"Name": "Aprovado por mãe do Bruno", "Status": "Completa", "description": "Aprovado por Rosa!", "complete": true},
   //
+  {"Name": "Compras para atividades aquáticas da Decathlon", "Status": "Em Andamento", "description": "Dia de comprar os nosso produtos para atividades aquáticas", "complete": false},
+  //
   {"Name": "Esperando data para perguntar", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
+  //
+  {"Name": "Aprovado por pai do Bruno", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
   //
   {"Name": "Aprovação do pais do Bruno", "Status": "-", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false},
   //
   {"Name": "Dia confirmado", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false},
   //
-  {"Name": "Dia Da Viagem Chegou!", "Status": "-", "description": "Chegou finalmente o momento de diversão que esperamos!", "complete": false},
+  {"Name": "Dia Da Viagem Chegou! Dia: (em breve vai aparecer aqui)", "Status": "-", "description": "Chegou finalmente o momento de diversão que esperamos!", "complete": false},
   //
   {"Name": "Dia Acabou!", "Status": "-", "description": "Deve ter sido um dia divertido para todos! Espero que tenha sido fixe :)", "complete": false}
 ];
