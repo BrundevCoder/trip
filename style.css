@@ -34,6 +34,7 @@ body {
 }
 
 h1 {
+  text-align: center;
   font-family: var(--font-family);
   color: var(--font-color);
   font-weight: 900;
