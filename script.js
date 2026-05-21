@@ -6,6 +6,8 @@ const tasks = [
   //
   {"Name": "Aprovação do Bruno", "Status": "Completa", "description": "Aprovado por Bruno!", "complete": true},
   //
+  {"Name": "Aprovação do mãe do Dinis", "Status": "Completa", "description": "Aprovado por mãe do Dinis!", "complete": true},
+  //
   {"Name": "Aprovado por mãe do Bruno", "Status": "Completa", "description": "Aprovado por Rosa!", "complete": true},
   //
   {"Name": "Compras para atividades aquáticas da Decathlon", "Status": "Em Andamento", "description": "Dia de comprar os nosso produtos para atividades aquáticas", "complete": false},
@@ -16,9 +18,13 @@ const tasks = [
   //
   {"Name": "Aprovação do pais do Bruno", "Status": "-", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false},
   //
-  {"Name": "Dia confirmado", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false},
+  {"Name": "Permissão de Deixar o Dinis vir.", "Status": "-", "description": "Os pais do Bruno ainda têm de permitir o Dinis vir na viagem!", "complete": false},
   //
-  {"Name": "Dia Da Viagem Chegou! Dia: (em breve vai aparecer aqui)", "Status": "-", "description": "Chegou finalmente o momento de diversão que esperamos!", "complete": false},
+  {"Name": "Dia confirmado. Dia: (em breve vai aparecer aqui)", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false},
+  //
+  {"Name": "Dia Da Viagem Chegou!", "Status": "-", "description": "Chegou finalmente o momento de diversão que esperamos!", "complete": false},
+  //
+  {"Name": "Postar story do instagram, não podia faltar :D", "Status": "-", "description": "Não podia faltar colocar algo nas redes sociais sobre o parque, não é mesmo?", "complete": false},
   //
   {"Name": "Dia Acabou!", "Status": "-", "description": "Deve ter sido um dia divertido para todos! Espero que tenha sido fixe :)", "complete": false}
 ];
