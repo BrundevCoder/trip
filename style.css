@@ -46,6 +46,7 @@ h1 {
 }
 
 .block {
+  opacity: 0;
   border: 5px solid var(--stats-bg);
   background: #ffffff2c;
   padding-top: 1rem;
@@ -53,6 +54,10 @@ h1 {
   padding-left: .5rem;
   padding-right: .5rem;
   border-radius: 12px;
+  animation: setUp 425ms linear forwards;
+  animation-timeline: view();
+  animation-range-start: 100px;
+  animation-range-end: 200px;
 }
 
 .block.complete {
@@ -141,6 +146,11 @@ h1 {
 @keyframes ballAnim {
   0%, 100% {transform: scale(1);}
   50% {transform: scale(1.12);}
+}
+
+@keyframes setUp {
+  0% {transform: translateY(15px); opacity: 0;}
+  100% {opacity: 1;}
 }
 
 @media (max-width: 255px) {
