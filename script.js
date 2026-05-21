@@ -12,6 +12,8 @@ const tasks = [
   //
   {"Name": "Compras para atividades aquáticas da Decathlon", "Status": "Em Andamento", "description": "Dia de comprar os nosso produtos para atividades aquáticas", "complete": false},
   //
+  {"Name": "Compras Decathlon chegaram!", "Status": "Em Andamento", "description": "as compras da Decathlon finalmente chegaram!", "complete": false},
+  //
   {"Name": "Esperando data para perguntar", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
   //
   {"Name": "Aprovado por pai do Bruno", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
@@ -84,6 +86,7 @@ function showTasks(name, status, decp, complete) {
 
   if (status.includes("Andamento") && !complete) {
     span.classList.add("span-in-progress");
+    section.classList.add("border-in-progress");
   }
 
   if (status === "-") {

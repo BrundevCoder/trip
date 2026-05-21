@@ -52,7 +52,7 @@ h1 {
 }
 
 .block.complete {
-  background: #ffffff83;
+  background: #423e3e83;
   border: 5px solid var(--complete);
   filter: grayscale(.5);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
@@ -99,6 +99,7 @@ h1 {
   height: 15px;
   background: #fff;
   border-radius: 50%;
+  animation: ballAnim 1s ease infinite;
 }
 
 .span-in-progress + .ball {
@@ -123,6 +124,15 @@ h1 {
 
 .occ {
   background: #ffffff67;
+}
+
+.border-in-progress {
+  border: 5px solid var(--in-progress) !important;
+}
+
+@keyframes ballAnim {
+  0%, 100% {transform: scale(1);}
+  50% {transform: scale(1.12);}
 }
 
 @media (max-width: 255px) {
