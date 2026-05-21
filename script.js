@@ -1,16 +1,25 @@
 const container = document.getElementById("content");
+const percentageDisplay = document.getElementById("percentage");
 
 const tasks = [
   {"Name": "Atividade na mente", "Status": "Completa", "description": "Esperando pela aprovação do Bruno ainda!", "complete": true},
   //
   {"Name": "Aprovação do Bruno", "Status": "Completa", "description": "Aprovado por Bruno!", "complete": true},
   //
+  {"Name": "Aprovado por mãe do Bruno", "Status": "Completa", "description": "Aprovado por Rosa!", "complete": true},
+  //
   {"Name": "Esperando data para perguntar", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
   //
   {"Name": "Aprovação do pais do Bruno", "Status": "-", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false},
   //
-  {"Name": "Dia confirmado", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false}
+  {"Name": "Dia confirmado", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false},
+  //
+  {"Name": "Dia Da Viagem Chegou!", "Status": "-", "description": "Chegou finalmente o momento de diversão que esperamos!", "complete": false},
+  //
+  {"Name": "Dia Acabou!", "Status": "-", "description": "Deve ter sido um dia divertido para todos! Espero que tenha sido fixe :)", "complete": false}
 ];
+
+let completedCount = 0;
 
 function showTasks(name, status, decp, complete) {
 
@@ -60,6 +69,7 @@ function showTasks(name, status, decp, complete) {
   if (complete) {
     section.classList.add("complete");
     span.classList.add("span-completed");
+    completedCount++;
   }
 
   if (status.includes("Andamento") && !complete) {
@@ -85,6 +95,10 @@ function update() {
 
     showTasks(name, status, description, complete);
   }
+
+  let percent = 100 * (completedCount / len);
+
+  percentageDisplay.innerText = `${percent.toFixed(0)}%`;
 }
 
 update();

@@ -26,6 +26,7 @@ body {
 }
 
 #content {
+  width: 100%;
   padding: .5rem;
   display: flex;
   flex-direction: column;
@@ -107,15 +108,46 @@ h1 {
 }
 
 .title {
+  margin-top: .5rem;
   font-family: var(--font-family);
   color: var(--font-color);
 }
 
 .description {
+  margin-top: .45rem;
   font-family: "Outfit";
   color: var(--decp-color);
 }
 
 .occ {
   background: #ffffff67;
+}
+
+@media (max-width: 255px) {
+  .stats {
+    padding: 1rem;
+    width: 80%;
+  }
+  .para {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  span {
+    text-align: center;
+  }
+  .span-in-progress {
+    padding: 0;
+  }
+  .ball {
+    margin: 0;
+  }
 }
