@@ -6,7 +6,7 @@ const tasks = [
   //
   {"Name": "Aprovação do Bruno", "Status": "Completa", "description": "Aprovado por Bruno!", "complete": true},
   //
-  {"Name": "Aprovação do mãe da Dinis", "Status": "Completa", "description": "Aprovado por mãe do Dinis!", "complete": true},
+  {"Name": "Aprovação da mãe do Dinis", "Status": "Completa", "description": "Aprovado por mãe do Dinis!", "complete": true},
   //
   {"Name": "Aprovado por mãe do Bruno", "Status": "Completa", "description": "Aprovado por Rosa!", "complete": true},
   //
