@@ -14,6 +14,8 @@ const tasks = [
   //
   {"Name": "Compras Decathlon chegaram!", "Status": "Em Andamento", "description": "as compras da Decathlon finalmente chegaram!", "complete": false},
   //
+  {"Name": "Esperando data de abertura do NaturWaterPark 29/05/26", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
+  //
   {"Name": "Esperando data para perguntar", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
   //
   {"Name": "Aprovado por pai do Bruno", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},

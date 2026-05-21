@@ -25,6 +25,10 @@ body {
   background: var(--bg-color);
 }
 
+.intro-txt {
+  margin-top: 2.25rem;
+}
+
 #content {
   width: 100%;
   max-width: 525px;
@@ -128,6 +132,10 @@ h1 {
 
 .border-in-progress {
   border: 5px solid var(--in-progress) !important;
+}
+
+.soon {
+  margin: 2rem 0;
 }
 
 @keyframes ballAnim {
