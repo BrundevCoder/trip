@@ -16,6 +16,8 @@ const tasks = [
   //
   {"Name": "Esperando data de abertura do NaturWaterPark 29/05/26", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
   //
+  {"Name": "Fazer Playlist de musicas para a viagem!", "Status": "Em Andamento", "description": "Não pode faltar fazer uma playlist para ouvir ao longo da viagem!", "complete": false},
+  //
   {"Name": "Esperando data para perguntar", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
   //
   {"Name": "Aprovado por pai do Bruno", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
@@ -25,8 +27,14 @@ const tasks = [
   {"Name": "Permissão de Deixar o Dinis vir.", "Status": "-", "description": "Os pais do Bruno ainda têm de permitir o Dinis vir na viagem!", "complete": false},
   //
   {"Name": "Dia confirmado. Dia: (em breve vai aparecer aqui)", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false},
+  {"Name": "Verificação do clima para o dia comfirmado", "Status": "-", "description": "Ainda temos de verificar como vai estar o nosso dia", "complete": false},
+  //
+  //
+  {"Name": "Arrumar a mochila para a viagem!", "Status": "-", "description": "Temos de esperar a anterior estar completa ;(", "complete": false},
   //
   {"Name": "Dia Da Viagem Chegou!", "Status": "-", "description": "Chegou finalmente o momento de diversão que esperamos!", "complete": false},
+  //
+  {"Name": "Carregar os nossos telemóveis!", "Status": "-", "description": "Onde vamos sem telemóveis carregados!??", "complete": false},
   //
   {"Name": "Postar story do instagram, não podia faltar :D", "Status": "-", "description": "Não podia faltar colocar algo nas redes sociais sobre o parque, não é mesmo?", "complete": false},
   //
