@@ -10,7 +10,7 @@ const tasks = [
   //
   {"Name": "Aprovado por mãe do Bruno", "Status": "Completa", "description": "Aprovado por Rosa!", "complete": true},
   //
-  {"Name": "Compras para atividades aquáticas da Decathlon", "Status": "Em Andamento", "description": "Dia de comprar os nosso produtos para atividades aquáticas", "complete": false},
+  {"Name": "Compras para atividades aquáticas da Decathlon", "Status": "Completa", "description": "Dia de comprar os nosso produtos para atividades aquáticas", "complete": true},
   //
   {"Name": "Compras Decathlon chegaram!", "Status": "Em Andamento", "description": "as compras da Decathlon finalmente chegaram!", "complete": false},
   //
