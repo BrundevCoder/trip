@@ -27,18 +27,6 @@ body {
 
 .intro-txt {
   margin-top: 2.25rem;
-}
-
-#content {
-  width: 100%;
-  max-width: 525px;
-  padding: .5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-}
-
-h1 {
   position: relative;
   text-align: center;
   font-family: var(--font-family);
@@ -46,7 +34,7 @@ h1 {
   font-weight: 900;
 }
 
-h1::after {
+.intro-txt::after {
   bottom: -10%;
   left: 0;
   position: absolute;
@@ -59,6 +47,24 @@ h1::after {
   );
   border-radius: 100px;
   animation: init 535ms cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+h1 {
+  margin-top: 2.25rem;
+  position: relative;
+  text-align: center;
+  font-family: var(--font-family);
+  color: var(--font-color);
+  font-weight: 900;
+}
+
+#content {
+  width: 100%;
+  max-width: 525px;
+  padding: .5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
 .block {
@@ -196,15 +202,32 @@ h1::after {
   to {width: 100%;}
 }
 
-@media (max-width: 365px) {
+@media (max-width: 300px) {
   .bar {
-    left: -3.25%;
+    top: 103%;
+    transform: translateY(-50%) rotateZ(-90deg);
+    width: 9px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    background: var(--stats-bg);
+    border-radius: 20px 0 0 20px;
   }
 }
 
-@media (max-width: 255px) {
+@media (max-width: 295px) {
   .stats {
-    padding: 1rem;
+    padding-right: .85rem;
+  }
+}
+
+@media (max-width: 275px) {
+  .stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    padding: 2rem;
     width: 80%;
   }
   .para {
@@ -213,6 +236,7 @@ h1::after {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    word-break: break-all;
   }
   .block {
     display: flex;
@@ -222,6 +246,7 @@ h1::after {
   }
   span {
     text-align: center;
+    word-break: normal;
   }
   .span-in-progress {
     padding: 0;
@@ -229,10 +254,40 @@ h1::after {
   .ball {
     margin: 0;
   }
-  .bar {
-    left: -4.5%;
-  }
   .title {
     font-size: 1rem;
+  }
+  .intro-txt {
+    font-size: 1.15rem;
+  }
+  .intro-txt::after {
+    height: 3px;
+    width: 20%;
+  }
+  .soon {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 220px) {
+  .bar {
+    
+  }
+}
+
+@media (max-width: 210px) {
+  .title {
+    font-size: 0.9rem;
+    word-break: break-all;
+  }
+  span {
+    word-break: break-all;
+    text-align: center;
+  }
+}
+
+@media (max-width: 190px) {
+  .bar {
+    top: 101.5%;
   }
 }
