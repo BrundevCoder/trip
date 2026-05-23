@@ -50,6 +50,11 @@ function showTasks(name, status, decp, complete) {
   const section = document.createElement("section");
   section.classList.add("block")
 
+  // bar
+  const bar = document.createElement("div");
+  bar.classList.add("bar");
+  section.appendChild(bar);
+
   const statusDiv = document.createElement("div");
   statusDiv.classList.add("stats");
 
@@ -89,17 +94,20 @@ function showTasks(name, status, decp, complete) {
 
   // check if it is complete
   if (complete) {
+    bar.classList.add("complete");
     section.classList.add("complete");
     span.classList.add("span-completed");
     completedCount++;
   }
 
   if (status.includes("Andamento") && !complete) {
+    bar.classList.add("progress");
     span.classList.add("span-in-progress");
     section.classList.add("border-in-progress");
   }
 
   if (status === "-") {
+    bar.classList.add("bar-null");
     section.classList.add("occ");
   }
 

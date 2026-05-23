@@ -159,6 +159,30 @@ h1::after {
   margin: 2rem 0;
 }
 
+.bar{
+  top: 50%;
+  transform: translateY(-50%);
+  width: 9px;
+  height: 100px;
+  position: absolute;
+  left: -2.5%;
+  background: var(--stats-bg);
+  border-radius: 20px 0 0 20px;
+  filter: contrast(10);
+}
+
+.bar.bar-null{
+  background: var(--stats-bg);
+}
+
+.bar.progress{
+  background: var(--in-progress);
+}
+
+.bar.complete{
+  background: var(--complete);
+}
+
 @keyframes ballAnim {
   0%, 100% {transform: scale(1);}
   50% {transform: scale(1.12);}
@@ -171,6 +195,12 @@ h1::after {
 
 @keyframes init {
   to {width: 100%;}
+}
+
+@media (max-width: 365px) {
+  .bar {
+    left: -3.25%;
+  }
 }
 
 @media (max-width: 255px) {
@@ -199,5 +229,11 @@ h1::after {
   }
   .ball {
     margin: 0;
+  }
+  .bar {
+    left: -4.5%;
+  }
+  .title {
+    font-size: 1rem;
   }
 }
