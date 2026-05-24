@@ -12,11 +12,17 @@ const tasks = [
   //
   {"Name": "Compras para atividades aquáticas da Decathlon", "Status": "Completa", "description": "Dia de comprar os nosso produtos para atividades aquáticas", "complete": true},
   //
-  {"Name": "Compras Decathlon chegaram!", "Status": "Em Andamento", "description": "as compras da Decathlon finalmente chegaram!", "complete": false},
+  {"Name": "Compras a caminho!", "Status": "Completa", "description": "As nossas compras já estou bem pertinho! Já é possivel sentir a sensação de usar oculos de piscina daqui!", "complete": true},
+  //
+  {"Name": "Compras Decathlon chegaram ao Cacifo!", "Status": "Em Andamento", "description": "As compras da Decathlon finalmente chegaram ao cacifo, agora basta só esperar o Bruno chegar lá e pegar!", "complete": false},
+  //
+  {"Name": "Bruno tem as encomendas na mão!", "Status": "Em Andamento", "description": "O Bruno já colocou o código no cacifo e chegou a casa seguro com as encomendas!", "complete": false},
+  //
+  {"Name": "Dinis agora tem a sua encomenda", "Status": "Em Andamento", "description": "O Bruno já entregou a encomenda do Dinis, a ele!", "complete": false},
   //
   {"Name": "Esperando data de abertura do NaturWaterPark 29/05/26", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
   //
-  {"Name": "Fazer Playlist de musicas para a viagem!", "Status": "Em Andamento", "description": "Não pode faltar fazer uma playlist para ouvir ao longo da viagem!", "complete": false},
+  {"Name": "Fazer Playlist de músicas para a viagem!", "Status": "Completa", "description": "Não pode faltar fazer uma playlist para ouvir ao longo da viagem! Disponível em: https://open.spotify.com/playlist/7qVNHiPNDCckNW3AYpRcbC?si=mih2tBmRThyVddFeEeKWJA&pt=f8c602bdde93f6b2cc9eae2f92d989f7&pi=N_ZVD4FGSP2Ax", "complete": true},
   //
   {"Name": "Esperando data para perguntar", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
   //
@@ -29,12 +35,9 @@ const tasks = [
   {"Name": "Dia confirmado. Dia: (em breve vai aparecer aqui)", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false},
   {"Name": "Verificação do clima para o dia comfirmado", "Status": "-", "description": "Ainda temos de verificar como vai estar o nosso dia", "complete": false},
   //
-  //
   {"Name": "Arrumar a mochila para a viagem!", "Status": "-", "description": "Temos de esperar a anterior estar completa ;(", "complete": false},
   //
   {"Name": "Dia Da Viagem Chegou!", "Status": "-", "description": "Chegou finalmente o momento de diversão que esperamos!", "complete": false},
-  //
-  {"Name": "Carregar os nossos telemóveis!", "Status": "-", "description": "Onde vamos sem telemóveis carregados!??", "complete": false},
   //
   {"Name": "Postar story do instagram, não podia faltar :D", "Status": "-", "description": "Não podia faltar colocar algo nas redes sociais sobre o parque, não é mesmo?", "complete": false},
   //
@@ -89,6 +92,11 @@ function showTasks(name, status, decp, complete) {
   description.classList.add("description");
 
   description.innerText = decp;
+
+  // if the description is too long, make it break
+  if (decp.length >= 65) {
+    description.classList.add("description-breaker");
+  }
 
   section.appendChild(description);
 

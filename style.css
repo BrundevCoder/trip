@@ -153,6 +153,10 @@ h1 {
   color: var(--decp-color);
 }
 
+.description-breaker {
+  word-break: break-all;
+}
+
 .occ {
   background: #ffffff67;
 }
@@ -266,12 +270,6 @@ h1 {
   }
   .soon {
     font-size: 1.2rem;
-  }
-}
-
-@media (max-width: 220px) {
-  .bar {
-    
   }
 }
 
