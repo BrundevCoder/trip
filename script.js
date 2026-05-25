@@ -14,11 +14,11 @@ const tasks = [
   //
   {"Name": "Compras a caminho!", "Status": "Completa", "description": "As nossas compras já estou bem pertinho! Já é possivel sentir a sensação de usar oculos de piscina daqui!", "complete": true},
   //
-  {"Name": "Compras Decathlon chegaram ao Cacifo!", "Status": "Em Andamento", "description": "As compras da Decathlon finalmente chegaram ao cacifo, agora basta só esperar o Bruno chegar lá e pegar!", "complete": true},
+  {"Name": "Compras Decathlon chegaram ao Cacifo!", "Status": "Completa", "description": "As compras da Decathlon finalmente chegaram ao cacifo, agora basta só esperar o Bruno chegar lá e pegar!", "complete": true},
   //
-  {"Name": "Bruno tem as encomendas na mão!", "Status": "Em Andamento", "description": "O Bruno já colocou o código no cacifo e chegou a casa seguro com as encomendas!", "complete": true},
+  {"Name": "Bruno tem as encomendas na mão!", "Status": "Completa", "description": "O Bruno já colocou o código no cacifo e chegou a casa seguro com as encomendas!", "complete": true},
   //
-  {"Name": "Dinis agora tem a sua encomenda", "Status": "Em Andamento", "description": "O Bruno já entregou a encomenda do Dinis, a ele!", "complete": true},
+  {"Name": "Dinis agora tem a sua encomenda", "Status": "Completa", "description": "O Bruno já entregou a encomenda do Dinis, a ele!", "complete": true},
   //
   {"Name": "Esperando data de abertura do NaturWaterPark 29/05/26", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
   //
