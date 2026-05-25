@@ -308,6 +308,7 @@ main {
   max-width: 590px;
   width: 90%;
   background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.35);
 }
 
 .percentage-bar {
