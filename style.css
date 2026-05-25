@@ -58,9 +58,14 @@ h1 {
   font-weight: 900;
 }
 
+main {
+  width: 100%;
+  max-width: 605px;
+}
+
 #content {
   width: 100%;
-  max-width: 525px;
+  max-width: 605px;
   padding: .5rem;
   display: flex;
   flex-direction: column;
@@ -129,6 +134,7 @@ h1 {
   width: 15px;
   height: 15px;
   background: #fff;
+  box-shadow: inset 1px 5px 5px var(--stats-bg);
   border-radius: 50%;
   animation: ballAnim 1s ease infinite;
 }
@@ -192,6 +198,72 @@ h1 {
   background: var(--complete);
 }
 
+.data-sec {
+  margin-top: 2.5rem;
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2.55rem;
+  background: #000;
+  border: 10px solid #333;
+  border-radius: 12px;
+}
+
+.data-block {
+  cursor: pointer;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  border-bottom: 1px solid var(--complete);
+  transition: transform 150ms ease;
+}
+
+.data-block:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.data-title {
+  font-family: monospace;
+  color: var(--font-color);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.data-time {
+  text-align: right;
+  font-family: monospace;
+  color: var(--complete);
+  font-weight: 700; 
+  font-size: 1.15rem;
+}
+
+.data-h2 {
+  font-family: var(--font-family);
+  color: var(--font-color);
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+.hidden-footer {
+  opacity: 0;
+  margin-bottom: 1.5rem;
+  transition: 300ms ease;
+}
+
+.hidden-footer:hover, .hidden-footer:focus {
+  opacity: 1;
+}
+
+#version {
+  font-family: var(--font-family);
+  color: #b6b1b1;
+  font-weight: 800;
+}
+
 @keyframes ballAnim {
   0%, 100% {transform: scale(1);}
   50% {transform: scale(1.12);}
@@ -206,7 +278,39 @@ h1 {
   to {width: 100%;}
 }
 
+@media (max-width: 700px) {
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .data-sec {
+    width: 80%;
+  }
+  .data-h2 {
+    font-size: calc(2.5rem / 2);
+  }
+  .data-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .data-title {
+    text-align: center;
+    font-size: 1rem;
+  }
+  .data-time {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 300px) {
+  .data-h2 {
+    font-size: calc(2.5rem / 3);
+  }
+  .data-title {
+    word-break: break-all;
+  }
   .bar {
     top: 103%;
     transform: translateY(-50%) rotateZ(-90deg);
