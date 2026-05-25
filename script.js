@@ -14,11 +14,11 @@ const tasks = [
   //
   {"Name": "Compras a caminho!", "Status": "Completa", "description": "As nossas compras já estou bem pertinho! Já é possivel sentir a sensação de usar oculos de piscina daqui!", "complete": true},
   //
-  {"Name": "Compras Decathlon chegaram ao Cacifo!", "Status": "Em Andamento", "description": "As compras da Decathlon finalmente chegaram ao cacifo, agora basta só esperar o Bruno chegar lá e pegar!", "complete": false},
+  {"Name": "Compras Decathlon chegaram ao Cacifo!", "Status": "Em Andamento", "description": "As compras da Decathlon finalmente chegaram ao cacifo, agora basta só esperar o Bruno chegar lá e pegar!", "complete": true},
   //
-  {"Name": "Bruno tem as encomendas na mão!", "Status": "Em Andamento", "description": "O Bruno já colocou o código no cacifo e chegou a casa seguro com as encomendas!", "complete": false},
+  {"Name": "Bruno tem as encomendas na mão!", "Status": "Em Andamento", "description": "O Bruno já colocou o código no cacifo e chegou a casa seguro com as encomendas!", "complete": true},
   //
-  {"Name": "Dinis agora tem a sua encomenda", "Status": "Em Andamento", "description": "O Bruno já entregou a encomenda do Dinis, a ele!", "complete": false},
+  {"Name": "Dinis agora tem a sua encomenda", "Status": "Em Andamento", "description": "O Bruno já entregou a encomenda do Dinis, a ele!", "complete": true},
   //
   {"Name": "Esperando data de abertura do NaturWaterPark 29/05/26", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false},
   //
@@ -33,6 +33,7 @@ const tasks = [
   {"Name": "Permissão de Deixar o Dinis vir.", "Status": "-", "description": "Os pais do Bruno ainda têm de permitir o Dinis vir na viagem!", "complete": false},
   //
   {"Name": "Dia confirmado. Dia: (em breve vai aparecer aqui)", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false},
+  //
   {"Name": "Verificação do clima para o dia comfirmado", "Status": "-", "description": "Ainda temos de verificar como vai estar o nosso dia", "complete": false},
   //
   {"Name": "Arrumar a mochila para a viagem!", "Status": "-", "description": "Temos de esperar a anterior estar completa ;(", "complete": false},
