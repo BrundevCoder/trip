@@ -328,9 +328,12 @@ main {
   padding: .15rem;
   padding-bottom: .3rem;
   background: var(--complete);
-  width: 5%;
+  width: 0%;
+  min-width: fit-content;
   height: 100%;
   border-radius: 100px;
+  transition-delay: 50ms;
+  transition: 700ms ease;
 }
 
 @keyframes ballAnim {

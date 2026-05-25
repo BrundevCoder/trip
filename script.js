@@ -180,7 +180,9 @@ function update() {
   document.getElementById("quantity").innerText = String(completedCount);
   document.getElementById("maxTasks").innerText = String(len);
 
-  document.getElementById("percent-bar").style.width = `${percent}%`;
+  setTimeout(() => {
+    document.getElementById("percent-bar").style.width = `${percent}%`;
+  }, 1);
   document.getElementById("percent-bar").innerText = `${percent}%`
 }
 
