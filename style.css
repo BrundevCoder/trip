@@ -25,6 +25,11 @@ body {
   background: var(--bg-color);
 }
 
+html {
+  scroll-behavior: smooth;
+  scrollbar-color: var(--complete) transparent;
+}
+
 .intro-txt {
   margin-top: 2.25rem;
   position: relative;
@@ -328,9 +333,13 @@ main {
   font-size: 1.1rem;
   padding: .15rem;
   padding-bottom: .3rem;
-  background: var(--complete);
+  background: linear-gradient(
+    135deg,
+    var(--complete), #76ff7d
+  );
   width: 0%;
   min-width: fit-content;
+  max-width: 100%;
   height: 100%;
   border-radius: 100px;
   transition-delay: 50ms;
