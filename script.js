@@ -3,54 +3,54 @@ const percentageDisplay = document.getElementById("percentage");
 const dataContainer = document.getElementById("dataSection");
 const versionDisplay = document.getElementById("version");
 
-const VERSION = "1.1.0";
-const PROJECTNAME = "Trip Water Park";
-
 const tasks = [
-  {"Name": "Atividade na mente", "Status": "Completa", "description": "Esperando pela aprovação do Bruno ainda!", "complete": true, "Date": new Date(2026, 5, 20, 22, 0)},
+  {"Name": "Atividade na mente", "Status": "Completa", "description": "Aprovado!", "complete": true, "Date": new Date(2026, 4, 20, 22, 0)},
   //
-  {"Name": "Aprovação do Bruno", "Status": "Completa", "description": "Aprovado por Bruno!", "complete": true, "Date": new Date(2026, 5, 20, 22, 0)},
+  {"Name": "Aprovação do Bruno", "Status": "Completa", "description": "Aprovado por Bruno!", "complete": true, "Date": new Date(2026, 4, 20, 22, 0)},
   //
-  {"Name": "Aprovação da mãe do Dinis", "Status": "Completa", "description": "Aprovado por mãe do Dinis!", "complete": true, "Date": new Date(2026, 5, 20, 22, 0)},
+  {"Name": "Aprovação da mãe do Dinis", "Status": "Completa", "description": "Aprovado por mãe do Dinis!", "complete": true, "Date": new Date(2026, 4, 20, 22, 0)},
   //
-  {"Name": "Aprovado por mãe do Bruno", "Status": "Completa", "description": "Aprovado por Rosa!", "complete": true, "Date": new Date(2026, 5, 20, 22, 0)},
+  {"Name": "Aprovado por mãe do Bruno", "Status": "Completa", "description": "Aprovado por Rosa!", "complete": true, "Date": new Date(2026, 4, 20, 22, 0)},
   //
-  {"Name": "Compras para atividades aquáticas da Decathlon", "Status": "Completa", "description": "Dia de comprar os nosso produtos para atividades aquáticas", "complete": true, "Date": new Date(2026, 5, 23, 14, 30)},
+  {"Name": "Compras para atividades aquáticas da Decathlon", "Status": "Completa", "description": "Dia de comprar os nosso produtos para atividades aquáticas", "complete": true, "Date": new Date(2026, 4, 23, 14, 30)},
   //
-  {"Name": "Compras a caminho!", "Status": "Completa", "description": "As nossas compras já estou bem pertinho! Já é possivel sentir a sensação de usar oculos de piscina daqui!", "complete": true, "Date": new Date(2026, 5, 24, 17, 19)},
+  {"Name": "Compras a caminho!", "Status": "Completa", "description": "As nossas compras já estou bem pertinho! Já é possivel sentir a sensação de usar oculos de piscina daqui!", "complete": true, "Date": new Date(2026, 4, 24, 17, 19)},
   //
-  {"Name": "Compras Decathlon chegaram ao Cacifo!", "Status": "Completa", "description": "As compras da Decathlon finalmente chegaram ao cacifo, agora basta só esperar o Bruno chegar lá e pegar!", "complete": true, "Date": new Date(2026, 5, 25, 9, 42)},
+  {"Name": "Compras Decathlon chegaram ao Cacifo!", "Status": "Completa", "description": "As compras da Decathlon finalmente chegaram ao cacifo, agora basta só esperar o Bruno chegar lá e pegar!", "complete": true, "Date": new Date(2026, 4, 25, 9, 42)},
   //
-  {"Name": "Bruno tem as encomendas na mão!", "Status": "Completa", "description": "O Bruno já colocou o código no cacifo e chegou a casa seguro com as encomendas!", "complete": true, "Date": new Date(2026, 5, 25, 16, 28)},
+  {"Name": "Bruno tem as encomendas na mão!", "Status": "Completa", "description": "O Bruno já colocou o código no cacifo e chegou a casa seguro com as encomendas!", "complete": true, "Date": new Date(2026, 4, 25, 16, 28)},
   //
-  {"Name": "Dinis agora tem a sua encomenda", "Status": "Completa", "description": "O Bruno já entregou a encomenda do Dinis, a ele!", "complete": true, "Date": new Date(2026, 5, 25, 16, 29)},
+  {"Name": "Dinis agora tem a sua encomenda", "Status": "Completa", "description": "O Bruno já entregou a encomenda do Dinis, a ele!", "complete": true, "Date": new Date(2026, 4, 25, 16, 29)},
   //
-  {"Name": "Esperando data de abertura do NaturWaterPark 29/05/26", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false, "Date": new Date(2026, 5, 29, 0, 0)},
+  {"Name": "Esperando data de abertura do NaturWaterPark 29/05/26", "Status": "Em Andamento", "description": "Ainda temos de esperar para o paque aquático abrir, primeiro!", "complete": false, "Date": new Date(2026, 4, 29, 0, 0)},
   //
-  {"Name": "Fazer Playlist de músicas para a viagem!", "Status": "Completa", "description": "Não pode faltar fazer uma playlist para ouvir ao longo da viagem! Disponível em: https://open.spotify.com/playlist/7qVNHiPNDCckNW3AYpRcbC?si=mih2tBmRThyVddFeEeKWJA&pt=f8c602bdde93f6b2cc9eae2f92d989f7&pi=N_ZVD4FGSP2Ax", "complete": true, "Date": new Date(2026, 5, 24, 16, 32)},
+  {"Name": "Fazer Playlist de músicas para a viagem!", "Status": "Completa", "description": "Não pode faltar fazer uma playlist para ouvir ao longo da viagem! Disponível em: https://open.spotify.com/playlist/7qVNHiPNDCckNW3AYpRcbC?si=mih2tBmRThyVddFeEeKWJA&pt=f8c602bdde93f6b2cc9eae2f92d989f7&pi=N_ZVD4FGSP2Ax", "complete": true, "Date": new Date(2026, 4, 24, 16, 32)},
   //
-  {"Name": "Esperando data para perguntar", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false, "Date": new Date(2026, 5, 25, 0, 0)},
+  {"Name": "Esperando data para perguntar", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
   //
-  {"Name": "Aprovado por pai do Bruno", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false, "Date": new Date(2026, 5, 25, 0, 0)},
+  {"Name": "Aprovado por pai do Bruno", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
   //
-  {"Name": "Aprovação do pais do Bruno", "Status": "-", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false, "Date": new Date(2026, 5, 25, 0, 0)},
+  {"Name": "Aprovação do pais do Bruno", "Status": "-", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
   //
-  {"Name": "Permissão de Deixar o Dinis vir.", "Status": "-", "description": "Os pais do Bruno ainda têm de permitir o Dinis vir na viagem!", "complete": false, "Date": new Date(2026, 5, 25, 0, 0)},
+  {"Name": "Permissão de Deixar o Dinis vir.", "Status": "-", "description": "Os pais do Bruno ainda têm de permitir o Dinis vir na viagem!", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
   //
-  {"Name": "Dia confirmado. Dia: (em breve vai aparecer aqui)", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false, "Date": new Date(2026, 5, 25, 0, 0)},
+  {"Name": "Dia confirmado. Dia: (em breve vai aparecer aqui)", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
   //
-  {"Name": "Verificação do clima para o dia comfirmado", "Status": "-", "description": "Ainda temos de verificar como vai estar o nosso dia", "complete": false, "Date": new Date(2026, 5, 25, 0, 0)},
+  {"Name": "Verificação do clima para o dia comfirmado", "Status": "-", "description": "Ainda temos de verificar como vai estar o nosso dia", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
   //
-  {"Name": "Arrumar a mochila para a viagem!", "Status": "-", "description": "Temos de esperar a anterior estar completa ;(", "complete": false, "Date": new Date(2026, 5, 25, 0, 0)},
+  {"Name": "Arrumar a mochila para a viagem!", "Status": "-", "description": "Temos de esperar a anterior estar completa ;(", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
   //
-  {"Name": "Dia Da Viagem Chegou!", "Status": "-", "description": "Chegou finalmente o momento de diversão que esperamos!", "complete": false, "Date": new Date(2026, 5, 25, 0, 0)},
+  {"Name": "Dia Da Viagem Chegou!", "Status": "-", "description": "Chegou finalmente o momento de diversão que esperamos!", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
   //
-  {"Name": "Postar story do instagram, não podia faltar :D", "Status": "-", "description": "Não podia faltar colocar algo nas redes sociais sobre o parque, não é mesmo?", "complete": false, "Date": new Date(2026, 5, 25, 0, 0)},
+  {"Name": "Postar story do instagram, não podia faltar :D", "Status": "-", "description": "Não podia faltar colocar algo nas redes sociais sobre o parque, não é mesmo?", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
   //
-  {"Name": "Dia Acabou!", "Status": "-", "description": "Deve ter sido um dia divertido para todos! Espero que tenha sido fixe :)", "complete": false, "Date": new Date(2026, 5, 25, 0, 0)}
+  {"Name": "Dia Acabou!", "Status": "-", "description": "Deve ter sido um dia divertido para todos! Espero que tenha sido fixe :)", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)}
 ];
 
 let completedCount = 0;
+
+const VERSION = "1.1.3";
+const PROJECTNAME = "Trip Water Park";
 
 function showTasks(name, status, decp, complete) {
 
@@ -129,13 +129,13 @@ function showTasks(name, status, decp, complete) {
   container.appendChild(section);
 }
 
-function showTasksDetails(name = "Title", complete = true, date = new Date(2026, 5, 25, 0, 0)) {
+function showTasksDetails(name = "Title", complete = true, date) {
 
   if (!complete) {
     return;
   }
 
-  let Stringdate = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} | ${date.getHours()}:${String(date.getMinutes()).padStart(2, "0")}`;
+  let Stringdate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} | ${date.getHours()}:${String(date.getMinutes()).padStart(2, "0")}`;
 
   const dataBlock = document.createElement("div");
   dataBlock.classList.add("data-block");
@@ -166,15 +166,25 @@ function update() {
     let complete = tasks[i]["complete"];
     let date = tasks[i]["Date"];
 
+    if (complete) {
+      status = "Completa";
+    }
+
     showTasks(name, status, description, complete);
     showTasksDetails(name, complete, date);
   }
 
-  let percent = 100 * (completedCount / len);
+  let percent = Math.floor(100 * (completedCount / len));
 
   percentageDisplay.innerText = `${percent.toFixed(0)}%`;
 
-  versionDisplay.innerText = `${VERSION} | ${PROJECTNAME}`
+  versionDisplay.innerText = `v${VERSION} | ${PROJECTNAME}`;
+
+  document.getElementById("quantity").innerText = String(completedCount);
+  document.getElementById("maxTasks").innerText = String(len);
+
+  document.getElementById("percent-bar").style.width = `${percent}%`;
+  document.getElementById("percent-bar").innerText = `${percent}%`
 }
 
 update();

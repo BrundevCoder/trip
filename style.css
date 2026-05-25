@@ -218,6 +218,7 @@ main {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
+  border-end-end-radius: 18px;
   border-bottom: 1px solid var(--complete);
   transition: transform 150ms ease;
 }
@@ -239,6 +240,7 @@ main {
   color: var(--complete);
   font-weight: 700; 
   font-size: 1.15rem;
+  padding-right: .5rem;
 }
 
 .data-h2 {
@@ -249,7 +251,7 @@ main {
 }
 
 .hidden-footer {
-  opacity: 0;
+  opacity: 0.1;
   margin-bottom: 1.5rem;
   transition: 300ms ease;
 }
@@ -259,9 +261,76 @@ main {
 }
 
 #version {
+  cursor: pointer;
+  user-select: none;
   font-family: var(--font-family);
   color: #b6b1b1;
   font-weight: 800;
+}
+
+.n-of-n {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+#quantity, #maxTasks {
+  color: var(--complete);
+}
+
+.show-numbers-para {
+  font-family: Outfit;
+  color: var(--font-color);
+  font-weight: 800;
+}
+
+.blur-header {
+  background: #ffffff07;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 615px;
+  height: 35px;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  border-end-end-radius: 12px;
+  border-end-start-radius: 12px;
+}
+
+.percentage-bar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  margin-top: 2.5rem;
+  padding: .55rem .5rem;
+  height: 100px;
+  border-radius: 12px;
+  max-width: 590px;
+  width: 90%;
+  background: #fff;
+}
+
+.percentage-bar {
+  border: 3px solid #5e1616;
+  background: var(--bg-color);
+  width: 100%;
+  height: fit-content;
+  border-radius: 100px;
+}
+
+.green-percentage-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 1.1rem;
+  padding: .15rem;
+  padding-bottom: .3rem;
+  background: var(--complete);
+  width: 5%;
+  height: 100%;
+  border-radius: 100px;
 }
 
 @keyframes ballAnim {
@@ -301,6 +370,7 @@ main {
   }
   .data-time {
     font-size: 1rem;
+    padding-right: 0;
   }
 }
 
