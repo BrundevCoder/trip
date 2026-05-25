@@ -1,5 +1,4 @@
 const container = document.getElementById("content");
-const percentageDisplay = document.getElementById("percentage");
 const dataContainer = document.getElementById("dataSection");
 const versionDisplay = document.getElementById("version");
 
@@ -175,8 +174,6 @@ function update() {
   }
 
   let percent = Math.floor(100 * (completedCount / len));
-
-  percentageDisplay.innerText = `${percent.toFixed(0)}%`;
 
   versionDisplay.innerText = `v${VERSION} | ${PROJECTNAME}`;
 
