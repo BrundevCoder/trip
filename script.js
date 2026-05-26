@@ -1,55 +1,11 @@
 const container = document.getElementById("content");
-const dataContainer = document.getElementById("dataSection");
 const versionDisplay = document.getElementById("version");
-
-const tasks = [
-  {"Name": "Atividade na mente", "Status": "Completa", "description": "Aprovado!", "complete": true, "Date": new Date(2026, 4, 20, 22, 0)},
-  //
-  {"Name": "Aprovação do Bruno", "Status": "Completa", "description": "Aprovado por Bruno!", "complete": true, "Date": new Date(2026, 4, 20, 22, 0)},
-  //
-  {"Name": "Aprovação da mãe do Dinis", "Status": "Completa", "description": "Aprovado por mãe do Dinis!", "complete": true, "Date": new Date(2026, 4, 20, 22, 0)},
-  //
-  {"Name": "Aprovado por mãe do Bruno", "Status": "Completa", "description": "Aprovado por Rosa!", "complete": true, "Date": new Date(2026, 4, 20, 22, 0)},
-  //
-  {"Name": "Compras para atividades aquáticas da Decathlon", "Status": "Completa", "description": "Dia de comprar os nosso produtos para atividades aquáticas", "complete": true, "Date": new Date(2026, 4, 23, 14, 30)},
-  //
-  {"Name": "Compras a caminho!", "Status": "Completa", "description": "As nossas compras já estou bem pertinho! Já é possivel sentir a sensação de usar oculos de piscina daqui!", "complete": true, "Date": new Date(2026, 4, 24, 17, 19)},
-  //
-  {"Name": "Compras Decathlon chegaram ao Cacifo!", "Status": "Completa", "description": "As compras da Decathlon finalmente chegaram ao cacifo, agora basta só esperar o Bruno chegar lá e pegar!", "complete": true, "Date": new Date(2026, 4, 25, 9, 42)},
-  //
-  {"Name": "Bruno tem as encomendas na mão!", "Status": "Completa", "description": "O Bruno já colocou o código no cacifo e chegou a casa seguro com as encomendas!", "complete": true, "Date": new Date(2026, 4, 25, 16, 28)},
-  //
-  {"Name": "Dinis agora tem a sua encomenda", "Status": "Completa", "description": "O Bruno já entregou a encomenda do Dinis, a ele!", "complete": true, "Date": new Date(2026, 4, 25, 16, 29)},
-  //
-  {"Name": "Esperando data de abertura do NaturWaterPark 29/05/26", "Status": "Em Andamento", "description": "Ainda temos de esperar para o paque aquático abrir, primeiro!", "complete": false, "Date": new Date(2026, 4, 29, 0, 0)},
-  //
-  {"Name": "Fazer Playlist de músicas para a viagem!", "Status": "Completa", "description": "Não pode faltar fazer uma playlist para ouvir ao longo da viagem! Disponível em: https://open.spotify.com/playlist/7qVNHiPNDCckNW3AYpRcbC?si=mih2tBmRThyVddFeEeKWJA&pt=f8c602bdde93f6b2cc9eae2f92d989f7&pi=N_ZVD4FGSP2Ax", "complete": true, "Date": new Date(2026, 4, 24, 16, 32)},
-  //
-  {"Name": "Esperando data para perguntar", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
-  //
-  {"Name": "Aprovado por pai do Bruno", "Status": "Em Andamento", "description": "Esperando pela hora de perguntar em breve!", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
-  //
-  {"Name": "Aprovação do pais do Bruno", "Status": "-", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
-  //
-  {"Name": "Permissão de Deixar o Dinis vir.", "Status": "-", "description": "Os pais do Bruno ainda têm de permitir o Dinis vir na viagem!", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
-  //
-  {"Name": "Dia confirmado. Dia: (em breve vai aparecer aqui)", "Status": "-", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
-  //
-  {"Name": "Verificação do clima para o dia comfirmado", "Status": "-", "description": "Ainda temos de verificar como vai estar o nosso dia", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
-  //
-  {"Name": "Arrumar a mochila para a viagem!", "Status": "-", "description": "Temos de esperar a anterior estar completa ;(", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
-  //
-  {"Name": "Dia Da Viagem Chegou!", "Status": "-", "description": "Chegou finalmente o momento de diversão que esperamos!", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
-  //
-  {"Name": "Postar story do instagram, não podia faltar :D", "Status": "-", "description": "Não podia faltar colocar algo nas redes sociais sobre o parque, não é mesmo?", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)},
-  //
-  {"Name": "Dia Acabou!", "Status": "-", "description": "Deve ter sido um dia divertido para todos! Espero que tenha sido fixe :)", "complete": false, "Date": new Date(2026, 4, 25, 0, 0)}
-];
 
 let completedCount = 0;
 
-const VERSION = "1.1.4";
+const VERSION = "1.1.6";
 const PROJECTNAME = "Trip Water Park";
+const APIURL = "https://trip-api-v1.onrender.com/tasks"
 
 function showTasks(name, status, decp, complete) {
 
@@ -128,34 +84,7 @@ function showTasks(name, status, decp, complete) {
   container.appendChild(section);
 }
 
-function showTasksDetails(name = "Title", complete = true, date) {
-
-  if (!complete) {
-    return;
-  }
-
-  let Stringdate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} | ${date.getHours()}:${String(date.getMinutes()).padStart(2, "0")}`;
-
-  const dataBlock = document.createElement("div");
-  dataBlock.classList.add("data-block");
-
-  const dataTitle = document.createElement("h3");
-  dataTitle.classList.add("data-title");
-  dataTitle.innerText = name;
-
-  const dataTime = document.createElement("p");
-  dataTime.classList.add("data-time");
-  dataTime.innerText = Stringdate;
-
-  dataBlock.appendChild(dataTitle);
-  dataBlock.appendChild(dataTime);
-
-
-  // index it
-  dataContainer.appendChild(dataBlock);
-}
-
-function update() {
+/*function update() {
   let len = tasks.length;
 
   container.innerText = "";
@@ -189,17 +118,40 @@ function update() {
   document.getElementById("percent-bar").innerText = `${percent}%`
 }
 
-//update();
+update();*/
+
+function manageNoService(error) {
+  container.innerText = "";
+
+  const header = document.createElement("h2");
+  header.innerHTML = `Server Error: ${error}. Somethings may be broken, contact the creator of this page`;
+  header.classList.add("error-header");
+
+
+  const link = document.createElement("a");
+  link.innerText = "Try Again";
+  link.href = "https://brundevcoder.github.io/trip/";
+  link.classList.add("error-link");
+
+  container.style.minHeight = "fit-content";
+  container.style.display = "flex";
+  container.style.justifyContent = "center";
+  container.style.alignItems = "center";
+
+  container.appendChild(header);
+  container.appendChild(link);
+}
 
 function loadRefreshContent() {
-  document.getElementById("percent-bar").style.width = `0%`;
   completedCount = 0;
 
-  fetch("https://trip-api-v1.onrender.com/tasks")
+  versionDisplay.innerText = `v${VERSION} | ${PROJECTNAME}`;
+
+  fetch(APIURL)
   .then(response => {
     
     if (!response.ok) {
-      throw new Error("Erro ao aceder à API: " + response.status);
+      throw new Error(response.status);
     }
     
     return response.json(); 
@@ -220,8 +172,6 @@ function loadRefreshContent() {
     let len = tasks.length;
     let percent = Math.floor(100 * (completedCount / len));
 
-    versionDisplay.innerText = `v${VERSION} | ${PROJECTNAME}`;
-
     document.getElementById("quantity").innerText = String(completedCount);
     document.getElementById("maxTasks").innerText = String(len);
 
@@ -231,7 +181,7 @@ function loadRefreshContent() {
     document.getElementById("percent-bar").innerText = `${percent}%`;
   })
   .catch(error => {
-    container.innerText = "Server are Offline!";
+    manageNoService(parseInt(error.message));
   });
 }
 

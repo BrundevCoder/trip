@@ -204,58 +204,6 @@ main {
   background: var(--complete);
 }
 
-.data-sec {
-  margin-top: 2.5rem;
-  padding: 1.5rem;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2.55rem;
-  background: #000;
-  border: 10px solid #333;
-  border-radius: 12px;
-}
-
-.data-block {
-  cursor: pointer;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  border-end-end-radius: 18px;
-  border-bottom: 1px solid var(--complete);
-  transition: transform 150ms ease;
-}
-
-.data-block:hover {
-  transform: translateY(-3px) scale(1.05);
-}
-
-.data-title {
-  font-family: monospace;
-  color: var(--font-color);
-  font-weight: 700;
-  font-size: 1.25rem;
-}
-
-.data-time {
-  text-align: right;
-  font-family: monospace;
-  color: var(--complete);
-  font-weight: 700; 
-  font-size: 1.15rem;
-  padding-right: .5rem;
-}
-
-.data-h2 {
-  font-family: var(--font-family);
-  color: var(--font-color);
-  font-weight: 800;
-  font-size: 2.5rem;
-}
-
 .hidden-footer {
   opacity: 0.1;
   margin-bottom: 1.5rem;
@@ -347,6 +295,42 @@ main {
   transition: 700ms ease;
 }
 
+.error-header {
+  margin-top: 2rem;
+  font-family: var(--font-family);
+  text-align: center;
+  border-left: 4px solid var(--in-progress);
+  border-radius: 8px;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  background: #b8ad4c62;
+}
+
+.error-link {
+  width: fit-content;
+  padding: .5rem .75rem;
+  background: var(--in-progress);
+  color: #756a00;
+  font-family: var(--font-family);
+  font-size: 2rem;
+  font-weight: 800;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 3px 5px;
+  transition: 150ms ease;
+}
+
+.error-link:hover {
+  transform: scale(1.05);
+}
+
+.error-link:active {
+  color: var(--in-progress);
+  background: #756a00;
+  transform: scale(.9);
+}
+
 @keyframes ballAnim {
   0%, 100% {transform: scale(1);}
   50% {transform: scale(1.12);}
@@ -368,30 +352,12 @@ main {
     align-items: center;
     flex-direction: column;
   }
-  .data-sec {
-    width: 80%;
-  }
-  .data-h2 {
-    font-size: calc(2.5rem / 2);
-  }
-  .data-block {
-    display: flex;
-    flex-direction: column;
-  }
-  .data-title {
-    text-align: center;
-    font-size: 1rem;
-  }
-  .data-time {
-    font-size: 1rem;
-    padding-right: 0;
+  .error-link {
+    font-size: 1.25rem;
   }
 }
 
 @media (max-width: 300px) {
-  .data-h2 {
-    font-size: calc(2.5rem / 3);
-  }
   .data-title {
     word-break: break-all;
   }
@@ -469,6 +435,9 @@ main {
   span {
     word-break: break-all;
     text-align: center;
+  }
+  .error-header {
+    font-size: 0.85rem;
   }
 }
 
