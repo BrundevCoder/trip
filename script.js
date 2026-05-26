@@ -144,8 +144,6 @@ function manageNoService(error) {
 
 function loadRefreshContent() {
 
-  versionDisplay.innerText = `v${VERSION} | ${PROJECTNAME}`;
-
   fetch(APIURL)
   .then(response => {
     
@@ -156,6 +154,9 @@ function loadRefreshContent() {
     return response.json(); 
   })
   .then(tasks => {
+
+    container.style.display = "flex";
+    container.style.alignItems = "stretch";
 
     container.innerText = "";
 
@@ -205,3 +206,5 @@ setInterval(() => {
 }, 20000);
 
 loadRefreshContent();
+
+versionDisplay.innerText = `v${VERSION} | ${PROJECTNAME}`;
