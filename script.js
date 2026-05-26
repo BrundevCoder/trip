@@ -195,7 +195,7 @@ function loadRefreshContent() {
   document.getElementById("percent-bar").style.width = `0%`;
   completedCount = 0;
 
-  fetch("http://127.0.0.1:5000/tasks")
+  fetch("https://trip-api-v1.onrender.com/tasks")
   .then(response => {
     
     if (!response.ok) {
