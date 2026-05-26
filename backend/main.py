@@ -30,7 +30,13 @@ tasks = [
 
 @app.route("/tasks", methods=['GET'])
 def getTasks():
-  return tasks
+  return jsonify(tasks)
+
+@app.route("/")
+def home():
+    return jsonify({
+        "message": "API is current online!"
+    })
 
 if __name__ == "__main__":
-  app.run(debug=True)
+  app.run(host="0.0.0.0", port=5000)
