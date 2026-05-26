@@ -3,7 +3,7 @@ const versionDisplay = document.getElementById("version");
 
 let completedCount = 0;
 
-const VERSION = "1.1.6";
+const VERSION = "1.1.7";
 const PROJECTNAME = "Trip Water Park";
 const APIURL = "https://trip-api-v1.onrender.com/tasks"
 
@@ -124,7 +124,7 @@ function manageNoService(error) {
   container.innerText = "";
 
   const header = document.createElement("h2");
-  header.innerHTML = `Server Error: ${error}. Somethings may be broken, contact the creator of this page`;
+  header.innerHTML = `Server Error: ${isNaN(error) ? "Unknown" : error}. Somethings may be broken, contact the creator of this page`;
   header.classList.add("error-header");
 
 
