@@ -124,7 +124,7 @@ function manageNoService(error) {
   container.innerText = "";
 
   const header = document.createElement("h2");
-  header.innerHTML = `Server Error: ${isNaN(error) ? "Unknown" : error}. Somethings may be broken, contact the creator of this page`;
+  header.innerHTML = `Server Error: ${error}. Somethings may be broken, contact the creator of this page`;
   header.classList.add("error-header");
 
 
@@ -181,7 +181,16 @@ function loadRefreshContent() {
     document.getElementById("percent-bar").innerText = `${percent}%`;
   })
   .catch(error => {
-    manageNoService(parseInt(error.message));
+    let erro;
+
+    if (isNaN(parseInt(error))) {
+      erro = error;
+    }
+    else {
+      erro = parseInt(error);
+    }
+
+    manageNoService(error.message);
   });
 }
 
