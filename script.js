@@ -5,7 +5,7 @@ let completedCount = 0;
 
 const VERSION = "1.1.7";
 const PROJECTNAME = "Trip Water Park";
-const APIURL = "https://trip-api-v1.onrender.com/tasks"
+const APIURL = "https://trip-api-v1.onrender.com/tasks";
 
 function showTasks(name, status, decp, complete) {
 
@@ -143,7 +143,6 @@ function manageNoService(error) {
 }
 
 function loadRefreshContent() {
-  completedCount = 0;
 
   versionDisplay.innerText = `v${VERSION} | ${PROJECTNAME}`;
 
@@ -160,6 +159,8 @@ function loadRefreshContent() {
 
     container.innerText = "";
 
+    completedCount = 0;
+
     tasks.forEach(task => {
 
       if (task["complete"]) {
@@ -171,6 +172,11 @@ function loadRefreshContent() {
 
     let len = tasks.length;
     let percent = Math.floor(100 * (completedCount / len));
+
+    if (percent > 100) {
+      percent = 0;
+      console.log("Percent pass over 100...")
+    }
 
     document.getElementById("quantity").innerText = String(completedCount);
     document.getElementById("maxTasks").innerText = String(len);
@@ -196,6 +202,6 @@ function loadRefreshContent() {
 
 setInterval(() => {
   loadRefreshContent();
-}, 5000);
+}, 20000);
 
 loadRefreshContent();
