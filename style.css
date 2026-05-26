@@ -75,6 +75,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  min-height: 500vh;
 }
 
 .block {

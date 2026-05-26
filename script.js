@@ -48,7 +48,7 @@ const tasks = [
 
 let completedCount = 0;
 
-const VERSION = "1.1.3";
+const VERSION = "1.1.4";
 const PROJECTNAME = "Trip Water Park";
 
 function showTasks(name, status, decp, complete) {
@@ -158,6 +158,9 @@ function showTasksDetails(name = "Title", complete = true, date) {
 function update() {
   let len = tasks.length;
 
+  container.innerText = "";
+  completedCount = 0;
+
   for (let i = 0; i < len; i++) {
     let name = tasks[i]["Name"];
     let status = tasks[i]["Status"];
@@ -186,4 +189,54 @@ function update() {
   document.getElementById("percent-bar").innerText = `${percent}%`
 }
 
-update();
+//update();
+
+function loadRefreshContent() {
+  document.getElementById("percent-bar").style.width = `0%`;
+  completedCount = 0;
+
+  fetch("http://127.0.0.1:5000/tasks")
+  .then(response => {
+    
+    if (!response.ok) {
+      throw new Error("Erro ao aceder à API: " + response.status);
+    }
+    
+    return response.json(); 
+  })
+  .then(tasks => {
+
+    container.innerText = "";
+
+    tasks.forEach(task => {
+
+      if (task["complete"]) {
+        task["Status"] = "Completa";
+      }
+
+      showTasks(task["Name"], task["Status"], task["description"], task["complete"])
+    });
+
+    let len = tasks.length;
+    let percent = Math.floor(100 * (completedCount / len));
+
+    versionDisplay.innerText = `v${VERSION} | ${PROJECTNAME}`;
+
+    document.getElementById("quantity").innerText = String(completedCount);
+    document.getElementById("maxTasks").innerText = String(len);
+
+    setTimeout(() => {
+      document.getElementById("percent-bar").style.width = `${percent}%`;
+    }, 1);
+    document.getElementById("percent-bar").innerText = `${percent}%`;
+  })
+  .catch(error => {
+    container.innerText = "Server are Offline!";
+  });
+}
+
+setInterval(() => {
+  loadRefreshContent();
+}, 5000);
+
+loadRefreshContent();
