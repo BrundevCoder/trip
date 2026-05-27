@@ -3,7 +3,7 @@ const versionDisplay = document.getElementById("version");
 
 const VERSION = "1.1.8";
 const PROJECTNAME = "Trip Water Park";
-const APIURL = "https://trip-api-v1.onrender.com/tasks";
+const APIURL = "https://trip-api-v2.onrender.com/tasks";
 
 let completedCount = 0;
 let debug = true;
