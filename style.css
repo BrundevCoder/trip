@@ -331,6 +331,18 @@ main {
   transform: scale(.9);
 }
 
+.rainbow-bg {
+  animation: rainbowBg 5s ease infinite;
+}
+
+@keyframes rainbowBg {
+  0%, 100% {background: #b8ad4c62;}
+  20% {background: #46f51a83}
+  40% {background: #16c9ba;}
+  60% {background: #5516c9;}
+  80% {background: #eb2164;}
+}
+
 @keyframes ballAnim {
   0%, 100% {transform: scale(1);}
   50% {transform: scale(1.12);}

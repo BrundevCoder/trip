@@ -7,6 +7,8 @@ const VERSION = "1.1.7";
 const PROJECTNAME = "Trip Water Park";
 const APIURL = "https://trip-api-v1.onrender.com/tasks";
 
+let debug = false;
+
 function showTasks(name, status, decp, complete) {
 
   // create a section element
@@ -142,6 +144,25 @@ function manageNoService(error) {
   container.appendChild(link);
 }
 
+function handleServerWaitResponse(bool) {
+  if (bool) {
+    const header = document.createElement("h2");
+    header.innerHTML = "Por favor, espere alguns segundos. Estamos esperando receber as tarefas :D";
+    header.classList.add("error-header", "rainbow-bg");
+  }
+  else {
+    if (container.childElementCount >= 1) {
+      let element = document.querySelector(".error-header");
+
+      if (element) {
+        element.remove();
+      }
+    }
+  }
+
+  return;
+}
+
 function loadRefreshContent() {
 
   fetch(APIURL)
@@ -162,14 +183,25 @@ function loadRefreshContent() {
 
     completedCount = 0;
 
+    if (debug) {
+      console.log(`Tasks recived with {${tasks.length}} tasks`);
+    }
+
     tasks.forEach(task => {
 
       if (task["complete"]) {
         task["Status"] = "Completa";
       }
 
+      if (debug) {
+        console.log(`Tasks recived! Name: ${task["Name"]}, Status: ${task["Status"]}`);
+      }
+
       showTasks(task["Name"], task["Status"], task["description"], task["complete"])
     });
+
+    // if the container contains nothing, warn user
+    handleServerWaitResponse(tasks.length === 0)
 
     let len = tasks.length;
     let percent = Math.floor(100 * (completedCount / len));
