@@ -120,7 +120,9 @@ function getRandomLoadingMessage() {
 
 function loadRefreshContent() {
 
-  document.getElementById("loaderMessager").innerText = getRandomLoadingMessage();
+  if (document.getElementById("loaderMessager")) {
+    document.getElementById("loaderMessager").innerText = getRandomLoadingMessage();
+  }
 
   fetch(APIURL)
   .then(response => {
