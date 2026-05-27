@@ -1,13 +1,13 @@
 const container = document.getElementById("content");
 const versionDisplay = document.getElementById("version");
 
-let completedCount = 0;
-
-const VERSION = "1.1.7";
+const VERSION = "1.1.8";
 const PROJECTNAME = "Trip Water Park";
 const APIURL = "https://trip-api-v1.onrender.com/tasks";
 
-let debug = false;
+let completedCount = 0;
+let debug = true;
+let warns = 0;
 
 function showTasks(name, status, decp, complete) {
 
@@ -86,49 +86,15 @@ function showTasks(name, status, decp, complete) {
   container.appendChild(section);
 }
 
-/*function update() {
-  let len = tasks.length;
-
-  container.innerText = "";
-  completedCount = 0;
-
-  for (let i = 0; i < len; i++) {
-    let name = tasks[i]["Name"];
-    let status = tasks[i]["Status"];
-    let description = tasks[i]["description"];
-    let complete = tasks[i]["complete"];
-    let date = tasks[i]["Date"];
-
-    if (complete) {
-      status = "Completa";
-    }
-
-    showTasks(name, status, description, complete);
-    showTasksDetails(name, complete, date);
-  }
-
-  let percent = Math.floor(100 * (completedCount / len));
-
-  versionDisplay.innerText = `v${VERSION} | ${PROJECTNAME}`;
-
-  document.getElementById("quantity").innerText = String(completedCount);
-  document.getElementById("maxTasks").innerText = String(len);
-
-  setTimeout(() => {
-    document.getElementById("percent-bar").style.width = `${percent}%`;
-  }, 1);
-  document.getElementById("percent-bar").innerText = `${percent}%`
-}
-
-update();*/
-
 function manageNoService(error) {
-  container.innerText = "";
+  // if element already exists return
+  if (warns >= 1) {
+    return;
+  }
 
   const header = document.createElement("h2");
   header.innerHTML = `Server Error: ${error}. Somethings may be broken, contact the creator of this page`;
   header.classList.add("error-header");
-
 
   const link = document.createElement("a");
   link.innerText = "Try Again";
@@ -142,28 +108,19 @@ function manageNoService(error) {
 
   container.appendChild(header);
   container.appendChild(link);
+
+  warns++;
 }
 
-function handleServerWaitResponse(bool) {
-  if (bool) {
-    const header = document.createElement("h2");
-    header.innerHTML = "Por favor, espere alguns segundos. Estamos esperando receber as tarefas :D";
-    header.classList.add("error-header", "rainbow-bg");
-  }
-  else {
-    if (container.childElementCount >= 1) {
-      let element = document.querySelector(".error-header");
-
-      if (element) {
-        element.remove();
-      }
-    }
-  }
-
-  return;
+function getRandomLoadingMessage() {
+  const messages = ["Por favor, espere alguns segundos. Estamos esperando receber as tarefas :D", "Parece que as tarefas ainda estão a chegar!", "Ás vezes as APIs demoram um tempo a processar os dados!", "Não se preocupe! As tarefas estão a caminho!"];
+  
+  return messages[Math.floor(Math.random() * messages.length)];
 }
 
 function loadRefreshContent() {
+
+  document.getElementById("loaderMessager").innerText = getRandomLoadingMessage();
 
   fetch(APIURL)
   .then(response => {
@@ -181,6 +138,7 @@ function loadRefreshContent() {
 
     container.innerText = "";
 
+    warns--;
     completedCount = 0;
 
     if (debug) {
@@ -199,9 +157,6 @@ function loadRefreshContent() {
 
       showTasks(task["Name"], task["Status"], task["description"], task["complete"])
     });
-
-    // if the container contains nothing, warn user
-    handleServerWaitResponse(tasks.length === 0)
 
     let len = tasks.length;
     let percent = Math.floor(100 * (completedCount / len));
