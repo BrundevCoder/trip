@@ -106,6 +106,8 @@ function manageNoService(error) {
     return;
   }
 
+  container.innerText = "";
+
   const header = document.createElement("h2");
   header.innerHTML = `Server Error: ${error}. Somethings may be broken, contact the creator of this page`;
   header.classList.add("error-header");
@@ -182,10 +184,6 @@ function loadRefreshContent() {
       if (task.rejected) {
         showTasks(task["Name"], "Rejeitada", "Tarefa automaticamente rejeitada", false);
         break;
-      }
-
-      if (task["complete"] && !nextTask["complete"] && !nextTask["rejected"]) {
-        console.log("a")
       }
 
       if (task["complete"]) {
