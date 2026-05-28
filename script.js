@@ -1,15 +1,18 @@
 const container = document.getElementById("content");
 const versionDisplay = document.getElementById("version");
+const notificationButton = document.getElementById("notificationsBtn");
+const notificationsContainer = document.getElementById("newTaskShower");
 
 const VERSION = "1.1.8";
 const PROJECTNAME = "Trip Water Park";
 const APIURL = "https://trip-api-v2.onrender.com/tasks";
+const UPDATES_API_URL = "https://trip-api-v2.onrender.com/updates";
 
 let completedCount = 0;
 let debug = true;
 let warns = 0;
 
-function showTasks(name, status, decp, complete) {
+function showTasks(name="title", status, decp="description", complete, typeContainer="main") {
 
   // create a section element
   // status
@@ -82,8 +85,19 @@ function showTasks(name, status, decp, complete) {
     section.classList.add("occ");
   }
 
+  if (status === "Rejected" || status === "Rejeitada") {
+    span.classList.add("span-rejected");
+    section.classList.add("border-rejected");
+    bar.classList.add("bar-rejected");
+  }
+
   // show it
-  container.appendChild(section);
+  if (typeContainer === "main") {
+    container.appendChild(section);
+  }
+  else {
+    notificationsContainer.appendChild(section);
+  }
 }
 
 function manageNoService(error) {
@@ -147,7 +161,7 @@ function loadRefreshContent() {
       console.log(`Tasks recived with {${tasks.length}} tasks`);
     }
 
-    tasks.forEach(task => {
+    /*tasks.forEach(task => {
 
       if (task["complete"]) {
         task["Status"] = "Completa";
@@ -158,7 +172,32 @@ function loadRefreshContent() {
       }
 
       showTasks(task["Name"], task["Status"], task["description"], task["complete"])
-    });
+    });*/
+
+    for (let i = 0; i < tasks.length; i++) {
+
+      let task = tasks[i];
+      let nextTask = tasks[i + 1];
+
+      if (task.rejected) {
+        showTasks(task["Name"], "Rejeitada", "Tarefa automaticamente rejeitada", false);
+        break;
+      }
+
+      if (task["complete"] && !nextTask["complete"] && !nextTask["rejected"]) {
+        console.log("a")
+      }
+
+      if (task["complete"]) {
+        task["Status"] = "Completa";
+      }
+
+      if (debug) {
+        console.log(`Tasks recived! Name: ${task["Name"]}, Status: ${task["Status"]}`);
+      }
+
+      showTasks(task["Name"], task["Status"], task["description"], task["complete"])
+    }
 
     let len = tasks.length;
     let percent = Math.floor(100 * (completedCount / len));
@@ -190,10 +229,39 @@ function loadRefreshContent() {
   });
 }
 
+async function updateNotifications() {
+  let data = {};
+
+  fetch(UPDATES_API_URL)
+    .then(response => {
+
+      if (response.ok) {
+        return response.json();
+      }
+
+      throw new Error("Response Error: " + response.status);
+    })
+    .then(update => {
+      data = update["task"];
+      
+      notificationsContainer.innerText = "";
+
+      showTasks(data["Name"], data["Status"], data["description"], data["complete"], "notify")
+    })
+    .catch(error => {
+      console.error(error);
+    })
+}
+
 setInterval(() => {
   loadRefreshContent();
 }, 20000);
 
 loadRefreshContent();
+
+notificationButton.addEventListener("click", () => {
+  document.querySelector(".notification-displayer-container").classList.toggle("notifications-open");
+  updateNotifications();
+})
 
 versionDisplay.innerText = `v${VERSION} | ${PROJECTNAME}`;

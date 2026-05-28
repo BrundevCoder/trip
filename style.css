@@ -13,6 +13,7 @@
   --font-color: rgb(218, 207, 199);
   --complete: #00d800;
   --in-progress: #ffe925;
+  --rejected: #cf0707;
   --decp-color: #dfd0d0;
 }
 
@@ -77,7 +78,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   gap: 4rem;
-  min-height: 620vh;
+  min-height: 20vh;
 }
 
 .block {
@@ -129,6 +130,12 @@ main {
   padding-left: .25rem;
 }
 
+.span-rejected {
+  color: var(--rejected);
+  font-weight: 700;
+  padding-left: .25rem;
+}
+
 .para {
   display: flex;
   justify-content: center;
@@ -155,6 +162,10 @@ main {
   background: var(--complete);
 }
 
+.span-rejected + .ball {
+  background: var(--rejected);
+}
+
 .title {
   margin-top: .5rem;
   font-family: var(--font-family);
@@ -177,6 +188,10 @@ main {
 
 .border-in-progress {
   border: 5px solid var(--in-progress) !important;
+}
+
+.border-rejected {
+  border: 5px solid var(--rejected) !important;
 }
 
 .soon {
@@ -204,6 +219,10 @@ main {
 
 .bar.complete{
   background: var(--complete);
+}
+
+.bar-rejected {
+  background: #cf0707 !important;
 }
 
 .hidden-footer {
@@ -393,6 +412,59 @@ main {
   animation: fadeOut 1ms ease forwards;
 }
 
+.notifications {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 1rem;
+  z-index: 99;
+}
+
+.notifications-button {
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 50%;
+  border: 3px solid var(--in-progress);
+  background: radial-gradient(var(--rejected));
+  transition: 120ms ease;
+}
+
+.notifications-button:hover {
+  transform: scale(1.05);
+}
+
+.notifications-button:active {
+  transform: scale(.95);
+}
+
+.notification-displayer-container {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  inset: 0;
+  background: var(--bg-color);
+  padding: 1.25rem;
+  z-index: 3;
+}
+
+.notifications-open {
+  display: flex;
+}
+
+.notification-displayer {
+  max-width: 605px;
+  padding: 1rem;
+}
+
+.updt-title {
+  font-family: var(--font-family);
+  font-weight: 800;
+  color: var(--font-color);
+  font-size: 1.85rem;
+}
+
 @keyframes fadeOut {
   100% {opacity: 0;}
 }
@@ -439,6 +511,20 @@ main {
 @media (max-width: 550px) {
   .load-msg {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 350px) {
+  .updt-title {
+    font-size: 1.25rem;
+  }
+  .notification-displayer {
+    overflow-y: scroll;
+  }
+  .notifications-button {
+    padding: .55rem;
+    font-size: 1.2rem;
+    opacity: 0.65;
   }
 }
 
