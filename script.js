@@ -9,7 +9,7 @@ const APIURL = "https://trip-api-v2.onrender.com/tasks";
 const UPDATES_API_URL = "https://trip-api-v2.onrender.com/updates";
 
 let completedCount = 0;
-let debug = true;
+let debug = false;
 let warns = 0;
 
 function showTasks(name="title", status, decp="description", complete, typeContainer="main") {
@@ -240,6 +240,11 @@ async function updateNotifications() {
       throw new Error("Response Error: " + response.status);
     })
     .then(update => {
+
+      if (update["task"]["complete"]) {
+        update["task"]["Status"] = "Completa"; 
+      }
+
       data = update["task"];
       
       notificationsContainer.innerText = "";
