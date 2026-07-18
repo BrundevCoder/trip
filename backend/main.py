@@ -21,7 +21,7 @@ tasks = [
   {"Name": "Aprovado por pai do Bruno", "Status": "Completa", "description": "Esperando pela hora de perguntar em breve!", "complete": True, "rejected": False},
   {"Name": "Aprovação do pais do Bruno", "Status": "Completa", "description": "Esperando pela aprovação dos pais do Bruno ainda! :)", "complete": True, "rejected": False},
   {"Name": "Permissão de Deixar o Dinis vir.", "Status": "-", "description": "Os pais do Bruno ainda têm de permitir o Dinis vir na viagem!", "complete": False, "rejected": False},
-  {"Name": "Dia confirmado. Dia: (em breve vai aparecer aqui)", "Status": "Em Andamento", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": False, "rejected": False},
+  {"Name": "Dia confirmado. Dia: (em breve vai aparecer aqui)", "Status": "Em Andamento", "description": "Ainda esperamos pela confirmação do dia oficial à visita!", "complete": False, "rejected": True},
   {"Name": "Verificação do clima para o dia comfirmado", "Status": "Em Andamento", "description": "Ainda temos de verificar como vai estar o nosso dia", "complete": False, "rejected": False},
   {"Name": "Arrumar a mochila para a viagem!", "Status": "-", "description": "Temos de esperar a anterior estar completa ;(\n Itens:\n - Toalha\n - Oculos de Natação & Meias de Natação\n - protetor solar\n - Roupa Suplente\n - E Muita Emocão\n", "complete": False, "rejected": False},
   {"Name": "Dia Da Viagem Chegou!", "Status": "-", "description": "Chegou finalmente o momento de diversão que esperamos!", "complete": False, "rejected": False},
